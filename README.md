@@ -77,6 +77,14 @@ reqwest::Error { kind: Status(403) ... }
 
 You have been rate-limited by Seneca, wait for a few minutes and try again.
 
+## Advanced use
+
+### 🚜 Docker image for generating XP
+
+```sh
+docker run -v /path/to/seneca-solver-keys.json:/seneca-solver-keys.json ghcr.io/arcaege/seneca-solver:main
+```
+
 ## Disclaimer
 
 This program is not affiliated with Seneca Learning in any way - it's a third-party tool that impersonates the Seneca frontend. **Using this tool might be against Seneca's Terms of Service.** Use it at your own risk - I'm not responsible if you get in trouble for using this tool.
