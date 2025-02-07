@@ -127,7 +127,7 @@ impl SenecaClient {
                 ("Accept-Language", "en-GB,en;q=0.5"),
                 ("Accept-Encoding", "gzip, deflate, br, zstd"),
                 ("Referer", "https://app.senecalearning.com/"),
-                ("access-key", &self.access_key),
+                // ("access-key", &self.access_key),
                 ("Content-Type", "application/json"),
                 (
                     "correlationId",
