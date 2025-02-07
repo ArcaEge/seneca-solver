@@ -10,6 +10,8 @@ use inquire::{Confirm, Select, Text};
 use regex::Regex;
 use serde_json::Value;
 use std::error::Error;
+use rand::seq::SliceRandom;
+use rand::thread_rng;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error>> {
@@ -147,11 +149,16 @@ async fn solve_assignments(
     client: &mut SenecaClient,
 ) -> Result<(), Box<dyn Error>> {
     let course_id = assignment["spec"]["courseId"].as_str().unwrap().to_string();
-    let section_id_len = assignment["spec"]["sectionIds"].as_array().unwrap().len();
+    let mut section_ids = assignment["spec"]["sectionIds"].as_array().unwrap().clone();
+
+    // Shuffle section IDs
+    section_ids.shuffle(&mut thread_rng());
+
+    let section_id_len = section_ids.len();
 
     let progress_bar = ProgressBar::new(section_id_len as u64);
 
-    for section_id in assignment["spec"]["sectionIds"].as_array().unwrap() {
+    for section_id in section_ids {
         let section_id = section_id.as_str().unwrap();
         let (_, _, contents) = client.get_contents(&course_id, section_id).await?;
         let contents = contents.as_array().unwrap();

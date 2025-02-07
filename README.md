@@ -65,7 +65,7 @@ You must have the following installed:
 
 1. Your assignments will be printed to the terminal. Use the arrow keys to navigate between them. Press `Enter` to start solving an assignment.
 
-1. The script should now start solving the assignment, which may take 5 or more minutes depending on its length. **It will likely not manage to solve all sections of the assignment** - this is a bug that is being worked on. Use the `Custom (URL)` mode and manually paste in the URLs of the sections. Also note that your access key will expire every hour, meaning you will need to repeat the process to obtain the key every hour. Using refresh tokens instead of access keys is on the To Do list.
+1. The script should now start solving the assignment, which may take 5 or more minutes depending on its length. **It will likely not manage to solve all sections of the assignment** - I believe this is due to Seneca's servers but I am looking for workarounds. Try running it a few more times (the order is shuffled every time in the code) or use the `Custom (URL)` mode and manually paste in the URLs of the sections. Also note that your access key will expire every hour, meaning you will need to repeat the process to obtain the key every hour. Using refresh tokens instead of access keys is on the To Do list.
 
 ## Troubleshooting/common errors
 

@@ -216,13 +216,24 @@ impl SenecaClient {
         let content_modules_len = content_modules.len();
 
         let now = Utc::now();
-        let (started, module_times) = generate_time_vec(now, Duration::hours(2), Duration::hours(2), content_modules_len);
+
+        let (mut min, mut max) = (Duration::seconds(5), Duration::seconds(25));
+
+        if std::env::args()
+        .collect::<Vec<String>>()
+        .contains(&"--duration-farm".to_string())
+        {
+            min = Duration::minutes(30);
+            max = Duration::minutes(45);
+        }
+
+        let (started, module_times) = generate_time_vec(now, min, max, content_modules_len);
         
         let mut modules = Vec::<Value>::new();
 
         let mut data = json!({
             "platform": "seneca",
-            "clientVersion": "2.13.81",
+            "clientVersion": "2.13.194",
             "userId": self.user_id,
             "userLevelFeatureFlagValue": "control",
             "session": {
@@ -356,6 +367,8 @@ impl SenecaClient {
                 .json(&data)
                 .send()
                 .await?;
+
+            // println!("{}", data);
 
             if response.status().is_success() {
                 break Ok(())
