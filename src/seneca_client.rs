@@ -233,7 +233,7 @@ impl SenecaClient {
 
         let mut data = json!({
             "platform": "seneca",
-            "clientVersion": "2.13.194",
+            "clientVersion": "3.0.4",
             "userId": self.user_id,
             "userLevelFeatureFlagValue": "control",
             "session": {
@@ -368,7 +368,7 @@ impl SenecaClient {
                 .send()
                 .await?;
 
-            // println!("{}", data);
+            // println!("{}", data.to_string());
 
             if response.status().is_success() {
                 break Ok(())

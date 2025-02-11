@@ -71,8 +71,7 @@ pub fn input_or_clipboard(
 // Generates a random duration within a range
 pub fn generate_random_duration(min: Duration, max: Duration) -> Duration {
     let mut rng = rand::thread_rng();
-    let variance = Duration::seconds(rng.gen_range(-max.num_seconds()..max.num_seconds()));
-    min + variance
+    Duration::seconds(rng.gen_range(min.num_seconds()..max.num_seconds()))
 }
 
 pub fn generate_time_vec(
