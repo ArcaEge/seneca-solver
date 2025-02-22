@@ -29,7 +29,7 @@ Download the executable from the links below. Alternatively, download from the [
 | M-series ARM macOS | [`seneca-solver_macos-aarch64`](https://github.com/ArcaEge/seneca-solver/releases/latest/download/seneca-solver_macos-aarch64) |
 | 64-bit x86 Linux   | [`seneca-solver_linux-x86_64`](https://github.com/ArcaEge/seneca-solver/releases/latest/download/seneca-solver_linux-x86_64) |
 
-If on a UNIX-based system (i.e. Linux or macOS), add the execute permission to the executable using `chmod +x <name-of-executable>`. Move on to the "Usage" section below. If your OS/system architecture is unsupported, use Method 2.
+If on a UNIX-based system (i.e. Linux or macOS), add the execute permission to the executable using `chmod +x <name-of-executable>`. If your OS/system architecture is unsupported, use Method 2.
 
 You can now move on to [usage](#how-to-use).
 
