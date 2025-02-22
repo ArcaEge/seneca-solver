@@ -31,6 +31,8 @@ Download the executable from the links below. Alternatively, download from the [
 
 If on a UNIX-based system (i.e. Linux or macOS), add the execute permission to the executable using `chmod +x <name-of-executable>`. Move on to the "Usage" section below. If your OS/system architecture is unsupported, use Method 2.
 
+You can now move on to [usage](#how-to-use).
+
 ### Method 2: Compile it yourself
 
 #### Requirements
